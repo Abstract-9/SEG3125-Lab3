@@ -7,7 +7,7 @@ export default class indexScreen extends Component {
 
         return(
             <View style={styles.container}>
-                <View style={styles.container}>
+                <View style={styles.buttonContainer}>
                     <TouchableHighlight onPress={() => {
                         this.props.navigation.openDrawer();
                     }}>
@@ -64,6 +64,10 @@ const styles = StyleSheet.create({
         width: 60,
         height: 60,
     },
+    buttonContainer: {
+      flex:1,
+      flexDirection:"row"
+    },
     container: {
         flex: 1,
         alignItems: "center"
@@ -73,17 +77,13 @@ const styles = StyleSheet.create({
     },
     menuContainer: {
         flex:1,
-        alignItems: "flex-start"
     },
     menuItem: {
         flex:1,
-        flexDirection:"row",
-        alignItems:"flex-start",
-        marginTop: 40
     },
     foodName: {
-      fontSize: 25,
-      marginEnd: 40
+        fontSize: 25,
+        marginEnd: 40
     },
     addButton: {
         marginEnd: 5
