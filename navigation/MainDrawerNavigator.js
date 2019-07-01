@@ -1,26 +1,17 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import {
-  createAppContainer,
   createStackNavigator,
   createDrawerNavigator
 } from 'react-navigation';
 
-import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
 import indexScreen from '../screens/indexScreen'
+import MenuScreen from '../screens/MenuScreen'
 
 const home_stackNav = createStackNavigator({
   Home: {
     screen: HomeScreen,
-  }
-});
-
-const links_stackNav = createStackNavigator({
-  Links: {
-    screen: LinksScreen
   }
 });
 
@@ -30,16 +21,22 @@ const index_stackNav = createStackNavigator({
   }
 });
 
+const menu_stackNav = createStackNavigator({
+    Menu: {
+        screen: MenuScreen
+    }
+});
+
 export default createDrawerNavigator({
       Home: {
         screen: home_stackNav
       },
-      Links: {
-        screen: links_stackNav
-      },
       Index: {
         screen: index_stackNav
       },
+      Menu: {
+          screen: menu_stackNav
+      }
     }
 )
 
