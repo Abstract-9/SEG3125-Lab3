@@ -42,8 +42,8 @@ const order_stackNav = createStackNavigator({
     }
 });
 
-const home_stackNav = createStackNavigator({
-    Home: {
+const checkout_stackNav = createStackNavigator({
+    Checkout: {
         screen: CheckoutScreen,
     }
 });
@@ -63,7 +63,10 @@ export default createDrawerNavigator({
       },
       Order: {
         screen: order_stackNav,
-      }
+      },
+      Checkout: {
+          screen: checkout_stackNav,
+        }
     }
 )
 
