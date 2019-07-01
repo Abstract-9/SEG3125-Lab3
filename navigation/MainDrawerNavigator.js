@@ -8,6 +8,9 @@ import {
 import HomeScreen from '../screens/HomeScreen';
 import indexScreen from '../screens/indexScreen'
 import MenuScreen from '../screens/MenuScreen'
+import RestaurantListScreen from '../screens/ResturantListScreen'
+import CheckoutScreen from '../screens/CheckoutScreen'
+import OrderScreen from '../screens/OrderScreen'
 
 const home_stackNav = createStackNavigator({
   Home: {
@@ -27,6 +30,24 @@ const menu_stackNav = createStackNavigator({
     }
 });
 
+const restaurant_stackNav = createStackNavigator({
+    Restaurant: {
+        screen: RestaurantListScreen,
+    }
+});
+
+const order_stackNav = createStackNavigator({
+    Order: {
+        screen: OrderScreen,
+    }
+});
+
+const home_stackNav = createStackNavigator({
+    Home: {
+        screen: CheckoutScreen,
+    }
+});
+
 export default createDrawerNavigator({
       Home: {
         screen: home_stackNav
@@ -36,6 +57,12 @@ export default createDrawerNavigator({
       },
       Menu: {
           screen: menu_stackNav
+      },
+      Restaurant: {
+          screen: restaurant_stackNav,
+      },
+      Order: {
+        screen: order_stackNav,
       }
     }
 )
