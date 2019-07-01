@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Button, Text, Picker } from 'react-native';
+import {StyleSheet, View, Button, Text, Picker, TouchableHighlight, Image} from 'react-native';
 
 export default class indexScreen extends Component {
 
@@ -7,6 +7,16 @@ export default class indexScreen extends Component {
 
         return(
             <View style={styles.container}>
+                <View style={styles.container}>
+                    <TouchableHighlight onPress={() => {
+                        this.props.navigation.openDrawer();
+                    }}>
+                        <Image
+                            style={styles.menuButton}
+                            source={require('../assets/images/robot-prod.png')}
+                        />
+                    </TouchableHighlight>
+                </View>
 
                 <Text style={styles.title}>Saucify</Text>
                 <Text style={styles.resturantTitle}>mcd</Text>
@@ -49,6 +59,11 @@ export default class indexScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+    menuButton:{
+        textAlign:'left',
+        width: 60,
+        height: 60,
+    },
     container: {
         flex: 1,
         alignItems: "center"
