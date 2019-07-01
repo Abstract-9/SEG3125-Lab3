@@ -22,7 +22,7 @@ const restaurant_stackNav = createStackNavigator({
 });
 
 const order_stackNav = createStackNavigator({
-    Order: {
+    "Shopping Cart": {
         screen: OrderScreen,
     }
 });
@@ -37,7 +37,7 @@ export default createDrawerNavigator({
       Restaurant: {
           screen: restaurant_stackNav,
       },
-      Order: {
+      "Shopping Cart":{
           screen: order_stackNav,
       },
 

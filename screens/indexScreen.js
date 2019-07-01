@@ -10,12 +10,24 @@ import {
     TouchableHighlight,
     View,
 } from 'react-native';
-
+import { SearchBar } from 'react-native-elements';
 import { MonoText } from '../components/StyledText';
+
 
 export default class HomeScreen extends Component {
 
+    state = {
+        search: '',
+    };
+
+    updateSearch = search => {
+        this.setState({ search });
+    };
+
     render() {
+
+        const { search } = this.state;
+
         return (
             <View style={styles.container}>
                 <ScrollView
@@ -39,6 +51,15 @@ export default class HomeScreen extends Component {
                             style={styles.welcomeImage}
                         />
                     </View>
+
+                    <SearchBar
+                        placeholder="Search Here"
+                        onChangeText={this.updateSearch}
+                        value={search}
+                        lightTheme = {true}
+                        containerStyle = {styles.searchBar}
+                        searchIcon = {null}
+                    />
 
                     <View style={styles.getStartedContainer}>
 
@@ -67,6 +88,10 @@ HomeScreen.navigationOptions = {
 
 
 const styles = StyleSheet.create({
+    searchBar:{
+      marginLeft: 20,
+      marginRight: 20,
+    },
     menuButton:{
         textAlign:'left',
         width: 60,
