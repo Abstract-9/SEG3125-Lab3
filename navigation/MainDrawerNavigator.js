@@ -47,7 +47,7 @@ export default createDrawerNavigator({
           screen: home_stackNav
       },
       Menu: {
-          screen: menu_stackNav
+          screen: Menu_stackNav
       },
       Restaurant: {
           screen: restaurant_stackNav,
