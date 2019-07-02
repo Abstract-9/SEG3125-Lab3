@@ -42,16 +42,16 @@ export default class HomeScreen extends Component {
                     </View>
 
                     <View>
-                        <Text fontsize={30}>
+                        <Text style = {{fontSize:30, textAlign: 'center'}}>
                             McDonald's
                         </Text>
                         <Image
                             source={require('../assets/images/mc.png')}
-                            style={styles.welcomeImage}
+                            style={styles.menuPicture}
                         />
                     </View>
 
-                    <View style = {{paddingLeft: 20, paddingRight: 20}}>
+                    <View style = {{paddingLeft: 100, paddingRight: 100, paddingBottom: 66}}>
                         <Button
                             title="Menu"
                             onPress={() => {this.props.navigation.navigate('Menu')}}
@@ -60,16 +60,16 @@ export default class HomeScreen extends Component {
                     </View>
 
                     <View>
-                        <Text fontsize={30}>
-                            McDonald's
+                        <Text style = {{fontSize:30, textAlign: 'center'}}>
+                            Chickens's
                         </Text>
                         <Image
                             source={require('../assets/images/chicken.jpg')}
-                            style={styles.welcomeImage}
+                            style={styles.menuPicture}
                         />
                     </View>
 
-                    <View style = {{paddingLeft: 20, paddingRight: 20}}>
+                    <View style = {{paddingLeft: 100, paddingRight: 100, paddingBottom: 66}}>
                         <Button
                             title="Menu"
                             onPress={() => {this.props.navigation.navigate('Menu')}}
@@ -78,16 +78,16 @@ export default class HomeScreen extends Component {
                     </View>
 
                     <View>
-                        <Text fontsize={30}>
-                            McDonald's
+                        <Text style = {{fontSize:30, textAlign: 'center'}}>
+                            Tacos's
                         </Text>
                         <Image
                             source={require('../assets/images/taco.jpg')}
-                            style={styles.welcomeImage}
+                            style={styles.menuPicture}
                         />
                     </View>
 
-                    <View style = {{paddingLeft: 20, paddingRight: 20}}>
+                    <View style = {{paddingLeft: 100, paddingRight: 100, paddingBottom: 66}}>
                         <Button
                             title="Menu"
                             onPress={() => {this.props.navigation.navigate('Menu')}}
@@ -130,6 +130,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 10,
         marginBottom: 20,
+    },
+    menuPicture:{
+      alignItems:'center',
+        marginLeft: 100,
+        marginRight:100,
+        marginBottom:30,
+        marginTop:15,
+        resizeMode: 'contain',
+        width: 160,
+        height: 160,
     },
     welcomeImage: {
         width: 100,
