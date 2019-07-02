@@ -7,7 +7,20 @@ import {
 import indexScreen from '../screens/indexScreen'
 import RestaurantListScreen from '../screens/ResturantListScreen'
 import OrderScreen from '../screens/OrderScreen'
+import MenuScreen from '../screens/MenuScreen.js'
+import CheckoutScreen from '../screens/CheckoutScreen.js'
 
+const Checkout_stackNav = createStackNavigator({
+    Checkout: {
+        screen: CheckoutScreen
+    }
+});
+
+const Menu_stackNav = createStackNavigator({
+    Menu: {
+        screen: MenuScreen
+    }
+});
 
 const home_stackNav = createStackNavigator({
   Home: {
