@@ -61,7 +61,9 @@ export default createDrawerNavigator({
 
 
     Checkout: {
-        screen: CheckoutScreen
-    },}
+        screen: Checkout_stackNav
+    },
+
+    }
 )
 

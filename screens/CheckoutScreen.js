@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
+import {SearchBar} from "react-native-elements";
 
 export default class HomeScreen extends Component {
 
@@ -41,20 +42,82 @@ export default class HomeScreen extends Component {
                         />
                     </View>
 
-                    <View style={styles.getStartedContainer}>
-
-
-                        <Text style={styles.getStartedText}>Get started by opening</Text>
-
-                        <View
-                            style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-                            <MonoText>screens/HomeScreen.js</MonoText>
-                        </View>
-
-                        <Text style={styles.getStartedText}>
-                            Change this text and your app will automatically reload.
+                    <View>
+                        <Text style = {{fontSize:30, textAlign: 'center'}}>
+                            Checkout
                         </Text>
+
                     </View>
+
+                    <View style = {{paddingLeft: 100, paddingRight: 100, paddingBottom: 66}}>
+                        <Button
+                            title="Credit"
+                            onPress={() => {this.props.navigation.navigate('Menu')}}
+
+                        />
+
+                        <SearchBar
+                            placeholder="card number here"
+                            onChangeText={this.updateSearch}
+                            value={search}
+                            lightTheme = {true}
+                            containerStyle = {styles.searchBar}
+                            searchIcon = {null}
+
+                        />
+
+                        <SearchBar
+                            placeholder="expiry date here"
+                            onChangeText={this.updateSearch}
+                            value={search}
+                            lightTheme = {true}
+                            containerStyle = {styles.searchBar}
+                            searchIcon = {null}
+
+                        />
+
+                        <SearchBar
+                            placeholder="CVC"
+                            onChangeText={this.updateSearch}
+                            value={search}
+                            lightTheme = {true}
+                            containerStyle = {styles.searchBar}
+                            searchIcon = {null}
+
+                        />
+                    </View>
+
+                    <View style = {{paddingLeft: 100, paddingRight: 100, paddingBottom: 66}}>
+                        <Button
+                            title="Cash"
+                            onPress={() => {this.props.navigation.navigate('Menu')}}
+
+                        />
+
+
+                    </View>
+
+                    <SearchBar
+                        placeholder="input address"
+                        onChangeText={this.updateSearch}
+                        value={search}
+                        lightTheme = {true}
+                        containerStyle = {styles.searchBar}
+                        searchIcon = {null}
+
+                    />
+
+                    <SearchBar
+                        placeholder="input name"
+                        onChangeText={this.updateSearch}
+                        value={search}
+                        lightTheme = {true}
+                        containerStyle = {styles.searchBar}
+                        searchIcon = {null}
+
+                    />
+
+
                 </ScrollView>
             </View>
         );
@@ -91,6 +154,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 10,
         marginBottom: 20,
+    },
+    menuPicture:{
+        alignItems:'center',
+        marginLeft: 100,
+        marginRight:100,
+        marginBottom:30,
+        marginTop:15,
+        resizeMode: 'contain',
+        width: 160,
+        height: 160,
     },
     welcomeImage: {
         width: 100,

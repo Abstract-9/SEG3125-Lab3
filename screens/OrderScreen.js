@@ -41,19 +41,58 @@ export default class HomeScreen extends Component {
                         />
                     </View>
 
-                    <View style={styles.getStartedContainer}>
-
-
-                        <Text style={styles.getStartedText}>Get started by opening</Text>
-
-                        <View
-                            style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-                            <MonoText>screens/HomeScreen.js</MonoText>
-                        </View>
-
-                        <Text style={styles.getStartedText}>
-                            Change this text and your app will automatically reload.
+                    <View>
+                        <Text style = {{fontSize:30, textAlign: 'center'}}>
+                            McDonald's
                         </Text>
+                        <Image
+                            source={require('../assets/images/mc.png')}
+                            style={styles.menuPicture}
+                        />
+                    </View>
+
+                    <View style = {{paddingLeft: 100, paddingRight: 100, paddingBottom: 66}}>
+                        <Button
+                            title="Menu"
+                            onPress={() => {this.props.navigation.navigate('Menu')}}
+
+                        />
+                    </View>
+
+                    <View>
+                        <Text style = {{fontSize:30, textAlign: 'center'}}>
+                            Chickens's
+                        </Text>
+                        <Image
+                            source={require('../assets/images/chicken.jpg')}
+                            style={styles.menuPicture}
+                        />
+                    </View>
+
+                    <View style = {{paddingLeft: 100, paddingRight: 100, paddingBottom: 66}}>
+                        <Button
+                            title="Menu"
+                            onPress={() => {this.props.navigation.navigate('Menu')}}
+
+                        />
+                    </View>
+
+                    <View>
+                        <Text style = {{fontSize:30, textAlign: 'center'}}>
+                            Tacos's
+                        </Text>
+                        <Image
+                            source={require('../assets/images/taco.jpg')}
+                            style={styles.menuPicture}
+                        />
+                    </View>
+
+                    <View style = {{paddingLeft: 100, paddingRight: 100, paddingBottom: 66}}>
+                        <Button
+                            title="Menu"
+                            onPress={() => {this.props.navigation.navigate('Menu')}}
+
+                        />
                     </View>
                 </ScrollView>
             </View>
@@ -91,6 +130,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 10,
         marginBottom: 20,
+    },
+    menuPicture:{
+        alignItems:'center',
+        marginLeft: 100,
+        marginRight:100,
+        marginBottom:30,
+        marginTop:15,
+        resizeMode: 'contain',
+        width: 160,
+        height: 160,
     },
     welcomeImage: {
         width: 100,

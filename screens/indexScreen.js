@@ -79,9 +79,9 @@ export default class HomeScreen extends Component {
                         onValueChange={(itemValue, itemIndex) =>
                             this.setState({language: itemValue})
                         }>
-                        <Picker.Item label="Breakfast" value="1" />
-                        <Picker.Item label="Lunch" value="2" />
-                        <Picker.Item label="Dinner" value="3" />
+                        <Picker.Item label="Breakfast" value="4" />
+                        <Picker.Item label="Lunch" value="5" />
+                        <Picker.Item label="Dinner" value="6" />
                     </Picker>
 
                     <View style = {{paddingLeft: 40, paddingRight: 40}}>
