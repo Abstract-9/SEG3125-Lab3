@@ -7,12 +7,19 @@ import {
 import indexScreen from '../screens/indexScreen'
 import RestaurantListScreen from '../screens/ResturantListScreen'
 import OrderScreen from '../screens/OrderScreen'
+import MenuScreen from '../screens/MenuScreen'
 
 
 const home_stackNav = createStackNavigator({
   Home: {
     screen: indexScreen
   }
+});
+
+const menu_stackNav = createStackNavigator({
+    Menu: {
+        screen: MenuScreen
+    }
 });
 
 const restaurant_stackNav = createStackNavigator({
@@ -27,20 +34,20 @@ const order_stackNav = createStackNavigator({
     }
 });
 
-
 export default createDrawerNavigator({
 
       Home: {
           screen: home_stackNav
       },
-
+      Menu: {
+          screen: menu_stackNav
+      },
       Restaurant: {
           screen: restaurant_stackNav,
       },
       "Shopping Cart":{
           screen: order_stackNav,
-      },
-
+      }
     }
 )
 

@@ -1,62 +1,78 @@
-import React, { Component } from 'react';
-import {StyleSheet, View, Button, Text, Picker, TouchableHighlight, Image} from 'react-native';
+import React, {Component} from 'react';
+import {
+    Image,
+    Button,
+    Platform,
+    ScrollView,
+    StyleSheet,
+    Text,
+    Picker,
+    TouchableOpacity,
+    TouchableHighlight,
+    View,
+} from 'react-native';
+import { SearchBar } from 'react-native-elements';
+import { MonoText } from '../components/StyledText';
 
-export default class indexScreen extends Component {
+export default class MenuScreen extends Component {
 
-    render(){
+    state = {
+        search: '',
+    };
 
-        return(
+    updateSearch = search => {
+        this.setState({ search });
+    };
+
+    render() {
+
+        const { search } = this.state;
+
+        return (
             <View style={styles.container}>
-                <View style={styles.buttonContainer}>
-                    <TouchableHighlight onPress={() => {
-                        this.props.navigation.openDrawer();
-                    }}>
-                        <Image
-                            style={styles.menuButton}
-                            source={require('../assets/images/robot-prod.png')}
-                        />
-                    </TouchableHighlight>
-                </View>
+                <ScrollView
+                    style={styles.container}
+                    contentContainerStyle={styles.contentContainer}>
 
-                <Text style={styles.title}>Saucify</Text>
-                <Text style={styles.resturantTitle}>mcd</Text>
-
-                <View style={styles.menuContainer}>
-                    <View style={styles.menuItem}>
-                        <Text style={styles.foodName}>ymu</Text>
-                        <Text style={styles.foodPrice}>10.99</Text>
-                        <Button style={styles.addButton}
-                                title="Add to cart"
-                                onPress={() => {}}/>
-                        <Picker
-                          selectedValue="1"
-                          style={styles.picker}>
-                          <Picker.Item label="1" value={1}/>
-                          <Picker.Item label="2" value={2}/>
-                          <Picker.Item label="3" value={3}/>
-                          <Picker.Item label="4" value={4}/>
-                          <Picker.Item label="5" value={5}/>
-                          <Picker.Item label="6" value={6}/>
-                          <Picker.Item label="7" value={7}/>
-                          <Picker.Item label="8" value={8}/>
-                          <Picker.Item label="9" value={9}/>
-                        </Picker>
-
+                    <View style={styles.container}>
+                        <TouchableHighlight onPress={() => {
+                            this.props.navigation.openDrawer();
+                        }}>
+                            <Image
+                                style={styles.menuButton}
+                                source={require('../assets/images/robot-prod.png')}
+                            />
+                        </TouchableHighlight>
                     </View>
-                </View>
 
+                    <Text style={styles.restaurantTitle}>ChickenStop</Text>
+
+                    <View style={styles.menuItem}>
+                        <Text style={styles.foodName}>borger</Text>
+                        <Text style={styles.foodPrice}>10.50</Text>
+                        <Picker style={styles.picker}>
+                            <Picker.Item label="1" value="1"/>
+                            <Picker.Item label="2" value="2"/>
+                            <Picker.Item label="3" value="3"/>
+                            <Picker.Item label="4" value="4"/>
+                            <Picker.Item label="5" value="5"/>
+                            <Picker.Item label="6" value="6"/>
+                            <Picker.Item label="7" value="7"/>
+                            <Picker.Item label="8" value="8"/>
+                            <Picker.Item label="9" value="9"/>
+                        </Picker>
+                    </View>
+                </ScrollView>
             </View>
-        )
+        );
     }
-
-    // getData = async(key) => {
-    //     try{
-    //         return await AsyncStorage.getItem(key);
-    //     } catch(e){
-    //
-    //     }
-    // }
 }
+
+MenuScreen.navigationOptions = {
+    header: null,
+    drawerLabel: 'Index'
+};
+
 
 const styles = StyleSheet.create({
     menuButton:{
@@ -64,37 +80,29 @@ const styles = StyleSheet.create({
         width: 60,
         height: 60,
     },
-    buttonContainer: {
-      flex:1,
-      flexDirection:"row"
-    },
     container: {
         flex: 1,
-        alignItems: "center"
+        backgroundColor: '#fff',
     },
-    title: {
-        fontSize: 30,
-    },
-    menuContainer: {
-        flex:1,
+    contentContainer: {
+        paddingTop: 30,
     },
     menuItem: {
-        flex:1,
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center'
     },
     foodName: {
-        fontSize: 25,
-        marginEnd: 40
-    },
-    addButton: {
-        marginEnd: 5
+        marginLeft: 5
     },
     foodPrice: {
-        fontSize: 25,
-        marginEnd: 5
+        marginLeft: 25
+    },
+    restaurantTitle: {
+        marginTop: 45,
+        fontSize: 30
     },
     picker: {
-        marginEnd: 5
+        marginLeft: 40
     }
-
-
 });
