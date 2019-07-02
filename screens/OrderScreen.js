@@ -14,7 +14,7 @@ import {
 
 import { MonoText } from '../components/StyledText';
 
-export default class HomeScreen extends Component {
+export default class OrderScreen extends Component {
 
     render() {
         return (
@@ -107,6 +107,7 @@ HomeScreen.navigationOptions = {
 
 
 const styles = StyleSheet.create({
+
     menuButton:{
         textAlign:'left',
         width: 60,

@@ -14,7 +14,7 @@ import {
 import { SearchBar } from 'react-native-elements';
 import { MonoText } from '../components/StyledText';
 
-export default class HomeScreen extends Component {
+export default class indexScreen extends Component {
 
     state = {
         search: '',
@@ -98,7 +98,7 @@ export default class HomeScreen extends Component {
     }
 }
 
-HomeScreen.navigationOptions = {
+indexScreen.navigationOptions = {
     header: null,
     drawerLabel: 'Home'
 };

@@ -171,6 +171,7 @@ MenuScreen.navigationOptions = {
 
 
 const styles = StyleSheet.create({
+
     menuButton:{
         textAlign:'left',
         width: 60,

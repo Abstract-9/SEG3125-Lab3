@@ -15,7 +15,7 @@ import {
 import { MonoText } from '../components/StyledText';
 import {SearchBar} from "react-native-elements";
 
-export default class HomeScreen extends Component {
+export default class CheckoutScreen extends Component {
 
     render() {
         return (
@@ -131,6 +131,10 @@ HomeScreen.navigationOptions = {
 
 
 const styles = StyleSheet.create({
+    searchBar:{
+        marginLeft: 20,
+        marginRight: 20,
+    },
     menuButton:{
         textAlign:'left',
         width: 60,

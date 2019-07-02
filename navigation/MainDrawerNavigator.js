@@ -53,9 +53,7 @@ export default createDrawerNavigator({
           screen: restaurant_stackNav
       },
 
-    Menu: {
-        screen: MenuScreen
-    },
+
 
     "Shopping Cart":{
           screen: order_stackNav

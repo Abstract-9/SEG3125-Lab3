@@ -14,7 +14,7 @@ import {
 
 import { MonoText } from '../components/StyledText';
 
-export default class HomeScreen extends Component {
+export default class ResturantListScreen extends Component {
 
     render() {
         return (
