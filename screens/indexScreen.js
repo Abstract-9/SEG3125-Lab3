@@ -9,11 +9,12 @@ import {
     TouchableOpacity,
     TouchableHighlight,
     View,
+    Picker,
 } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 import { MonoText } from '../components/StyledText';
 
-export default class indexScreen extends Component {
+export default class HomeScreen extends Component {
 
     state = {
         search: '',
@@ -58,31 +59,48 @@ export default class indexScreen extends Component {
                         lightTheme = {true}
                         containerStyle = {styles.searchBar}
                         searchIcon = {null}
+
                     />
 
-                    <View style={styles.getStartedContainer}>
+                    <Picker
+                        selectedValue={this.state.language}
+                        style={{height: 50, width: 200, marginLeft: 100, marginRight:100, marginBottom: 30, marginTop: 30}}
+                        onValueChange={(itemValue, itemIndex) =>
+                            this.setState({language: itemValue})
+                        }>
+                        <Picker.Item label="Toronto" value="1" />
+                        <Picker.Item label="Montreal" value="2" />
+                        <Picker.Item label="Ottawa" value="3" />
+                    </Picker>
 
+                    <Picker
+                        selectedValue={this.state.language}
+                        style={{height: 50, width: 200, marginLeft: 100, marginRight:100, alignItems: 'center', marginBottom: 30}}
+                        onValueChange={(itemValue, itemIndex) =>
+                            this.setState({language: itemValue})
+                        }>
+                        <Picker.Item label="Breakfast" value="1" />
+                        <Picker.Item label="Lunch" value="2" />
+                        <Picker.Item label="Dinner" value="3" />
+                    </Picker>
 
-                        <Text style={styles.getStartedText}>Get started by opening</Text>
+                    <View style = {{paddingLeft: 40, paddingRight: 40}}>
+                        <Button
+                            title="Search"
+                            onPress={() => {this.props.navigation.navigate('Restaurant')}}
 
-                        <View
-                            style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-                            <MonoText>screens/HomeScreen.js</MonoText>
-                        </View>
-
-                        <Text style={styles.getStartedText}>
-                            Change this text and your app will automatically reload.
-                        </Text>
+                        />
                     </View>
+
                 </ScrollView>
             </View>
         );
     }
 }
 
-indexScreen.navigationOptions = {
+HomeScreen.navigationOptions = {
     header: null,
-    drawerLabel: 'Index'
+    drawerLabel: 'Home'
 };
 
 

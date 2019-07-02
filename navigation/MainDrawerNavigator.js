@@ -7,19 +7,25 @@ import {
 import indexScreen from '../screens/indexScreen'
 import RestaurantListScreen from '../screens/ResturantListScreen'
 import OrderScreen from '../screens/OrderScreen'
-import MenuScreen from '../screens/MenuScreen'
+import MenuScreen from '../screens/MenuScreen.js'
+import CheckoutScreen from '../screens/CheckoutScreen.js'
 
+const Checkout_stackNav = createStackNavigator({
+    Checkout: {
+        screen: CheckoutScreen
+    }
+});
+
+const Menu_stackNav = createStackNavigator({
+    Menu: {
+        screen: MenuScreen
+    }
+});
 
 const home_stackNav = createStackNavigator({
   Home: {
     screen: indexScreen
   }
-});
-
-const menu_stackNav = createStackNavigator({
-    Menu: {
-        screen: MenuScreen
-    }
 });
 
 const restaurant_stackNav = createStackNavigator({
@@ -34,6 +40,7 @@ const order_stackNav = createStackNavigator({
     }
 });
 
+
 export default createDrawerNavigator({
 
       Home: {
@@ -47,7 +54,8 @@ export default createDrawerNavigator({
       },
       "Shopping Cart":{
           screen: order_stackNav,
-      }
+      },
+
     }
 )
 
